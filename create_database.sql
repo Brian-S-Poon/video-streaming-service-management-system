@@ -25,7 +25,9 @@ CREATE TABLE IF NOT EXISTS customers (
     city VARCHAR(100) NOT NULL,
     state CHAR(2) NOT NULL,
     email_address VARCHAR(100) NOT NULL,
-    PRIMARY KEY (customer_id)
+    subscription_id INT NOT NULL,
+    PRIMARY KEY (customer_id),
+    FOREIGN KEY (subscription_id) REFERENCES subscription_plans(subscription_id)
 );
 INSERT INTO customers (
 	first_name, 
@@ -35,18 +37,19 @@ INSERT INTO customers (
     street_address, 
     city, 
     state, 
-    email_address
+    email_address,
+    subscription_id
 )
-VALUES ('Michael', 'Somb', '1995-05-11', '1-115-195-1565', '14 Fidle St', 'Diana', 'WI', 'hunter000@gmail.com'),
-('Lily', 'Jenkin', '1952-01-21', '1-946-211-5211', '195 Gaus Circle', 'Atersia', 'AK', 'JustALake@gmail.com'),
-('Hank', 'Poshom', '1988-12-25', NULL, '1541 Hendricks Lane', 'Bakerfille', 'CA', 'fighter44@gmail.com'),
-('Henry', 'Lee', '1969-10-16', '1-714-122-1123', '95425 Pottta Street', 'Three Rivers', 'NM', 'bunnystar@gmail.com'),
-('Justin', 'Ghulman', '2001-09-12', '1-818-511-5633', '4541 Wafule Strt', 'Saint John', 'AR', 'HopeLiveLove@gmail.com'),
-('Enrique', 'Diaz', '1988-06-25', '1-626-666-8452', '98111 Atarly Lane', 'Zion Forest', 'NY', 'CoderHacker41@gmail.com'),
-('Natalia', 'Schmill', '1979-07-13', NULL, '941 Centerville St', 'Spring Lakes', 'CO', '1bigjohnny@gmail.com'),
-('Johnson', 'Overeem', '1996-04-07', '1-131-695-6412', '1415 Neastrum Street', 'Hundle', 'FL', 'bestartisteva@gmail.com'),
-('Jane', 'Fredo', '1992-06-05', '1-221-692-4213', '6541 Yolas Circle', 'Cherry', 'OR', 'anotherbumyum@gmail.com'),
-('Peter', 'Bakers', '1989-03-15', NULL, '98541 Temopra Street', 'Menesine', 'WA', 'icecreamlover00@gmail.com');
+VALUES ('Michael', 'Somb', '1995-05-11', '1-115-195-1565', '14 Fidle St', 'Diana', 'WI', 'hunter000@gmail.com', 1),
+('Lily', 'Jenkin', '1952-01-21', '1-946-211-5211', '195 Gaus Circle', 'Atersia', 'AK', 'JustALake@gmail.com', 2),
+('Hank', 'Poshom', '1988-12-25', NULL, '1541 Hendricks Lane', 'Bakerfille', 'CA', 'fighter44@gmail.com', 2),
+('Henry', 'Lee', '1969-10-16', '1-714-122-1123', '95425 Pottta Street', 'Three Rivers', 'NM', 'bunnystar@gmail.com', 3),
+('Justin', 'Ghulman', '2001-09-12', '1-818-511-5633', '4541 Wafule Strt', 'Saint John', 'AR', 'HopeLiveLove@gmail.com', 1),
+('Enrique', 'Diaz', '1988-06-25', '1-626-666-8452', '98111 Atarly Lane', 'Zion Forest', 'NY', 'CoderHacker41@gmail.com', 2),
+('Natalia', 'Schmill', '1979-07-13', NULL, '941 Centerville St', 'Spring Lakes', 'CO', '1bigjohnny@gmail.com', 1),
+('Johnson', 'Overeem', '1996-04-07', '1-131-695-6412', '1415 Neastrum Street', 'Hundle', 'FL', 'bestartisteva@gmail.com', 2),
+('Jane', 'Fredo', '1992-06-05', '1-221-692-4213', '6541 Yolas Circle', 'Cherry', 'OR', 'anotherbumyum@gmail.com', 1),
+('Peter', 'Bakers', '1989-03-15', NULL, '98541 Temopra Street', 'Menesine', 'WA', 'icecreamlover00@gmail.com', 3);
 
 
 CREATE TABLE IF NOT EXISTS distributors (
