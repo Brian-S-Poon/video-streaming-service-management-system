@@ -1,16 +1,30 @@
 CREATE DATABASE IF NOT EXISTS video_streaming_service;
 USE video_streaming_service;
 
+
+CREATE TABLE IF NOT EXISTS subscription_plans (
+	subscription_id INT AUTO_INCREMENT,
+    subscription_name VARCHAR(100) NOT NULL,
+    subscription_price VARCHAR(100) NOT NULL,
+    number_of_devices INT NOT NULL,
+    PRIMARY KEY (subscription_id)
+);
+INSERT INTO subscription_plans (subscription_name, subscription_price, number_of_devices)
+VALUES ('Basic', '9.99', 1),
+('Standard', '14.99', 2),
+('Premium', '19.99', 4);
+
+
 CREATE TABLE IF NOT EXISTS customers (
 	customer_id INT AUTO_INCREMENT NOT NULL,
-	first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
+	first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
     date_of_birth DATE,
-    phone_number VARCHAR(50),
-    street_address VARCHAR(50) NOT NULL,
-    city VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(100),
+    street_address VARCHAR(100) NOT NULL,
+    city VARCHAR(100) NOT NULL,
     state CHAR(2) NOT NULL,
-    email_address VARCHAR(50) NOT NULL,
+    email_address VARCHAR(100) NOT NULL,
     PRIMARY KEY (customer_id)
 );
 INSERT INTO customers (
@@ -37,7 +51,7 @@ VALUES ('Michael', 'Somb', '1995-05-11', '1-115-195-1565', '14 Fidle St', 'Diana
 
 CREATE TABLE IF NOT EXISTS distributors (
 	distributor_id INT AUTO_INCREMENT NOT NULL,
-    distributor_name VARCHAR(50) NOT NULL,
+    distributor_name VARCHAR(100) NOT NULL,
     PRIMARY KEY (distributor_id)
 );
 INSERT INTO distributors (distributor_name)
@@ -51,11 +65,12 @@ VALUES ('Columbia Pictures'),
 ('Warner Bros. Television Studios'),
 ('Miramax');
 
+
 CREATE TABLE IF NOT EXISTS content (
 	content_id INT AUTO_INCREMENT NOT NULL,
-    title VARCHAR(50) NOT NULL,
-    episode VARCHAR(50),
-    genre VARCHAR(50) NOT NULL,
+    title VARCHAR(100) NOT NULL,
+    episode VARCHAR(100),
+    genre VARCHAR(100) NOT NULL,
     running_time TIME NOT NULL,
     release_year INT NOT NULL,
     distributor_id INT NOT NULL,
@@ -73,6 +88,7 @@ VALUES ('The Shawshank Redemption', 'Drama', NULL, '2:22', 1994, 1),
 ('Pulp Fiction','Crime', NULL, '2:34',1994, 9),
 ('The Good, the Bad and the Ugly','Western', NULL, '2:58',1966, 5),
 ('The Lord of the Rings: The Fellowship of the Ring','Action', NULL, '2:58',2001, 3);
+
 
 CREATE TABLE IF NOT EXISTS stream (
 	stream_id INT AUTO_INCREMENT NOT NULL,
