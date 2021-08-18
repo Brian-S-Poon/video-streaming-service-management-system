@@ -24,3 +24,9 @@ USE video_streaming_service;
 SELECT *
 FROM customers
 WHERE phone_number IS NULL
+
+-- This query returns customers who are able to upgrade their plan. This is important because we can send newsletters.
+SELECT c.customer_id, c.first_name, c.last_name, c.email_address, subscription_name, subscription_price, number_of_devices
+FROM customers c
+JOIN subscription_plans sp ON c.subscription_id = sp.subscription_id
+WHERE number_of_devices < 4
