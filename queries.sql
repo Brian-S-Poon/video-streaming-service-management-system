@@ -1,5 +1,12 @@
--- This query returns stream_id, content_id, title, stream_date, and stream_duration.
--- This query is useful because it shows most recent streamed titles in DESC order and the titles that have never been streamed.
+-- Basic SELECT statements to retrieve data from our database tables.
+SELECT * FROM content
+SELECT * FROM customers
+SELECT * FROM distributors
+SELECT * FROM stream
+SELECT * FROM subscription_plans
+
+
+-- This query is useful because it returns the most recent streamed titles in DESC order and the titles that have never been streamed.
 -- This information is important because we can remove unpopular titles from our content list.
 USE video_streaming_service;
 SELECT 
@@ -29,7 +36,7 @@ WHERE s.stream_id IS NULL
 ORDER BY s.stream_date DESC
 
 
--- This query returns the custoemrs that have not listed a phone number.
+-- This query returns the customers that have not listed a phone number.
 -- This query is important because it allows us to send an email to them for 2FA registration.
 USE video_streaming_service;
 SELECT 
@@ -42,8 +49,8 @@ FROM customers c
 WHERE c.phone_number IS NULL
 
 
--- This query returns the email address' of customers who are able to upgrade their subscription plan. The purpose of 
--- this query is to send a newsletter about the benefits of upgrading their subscription plan.
+-- This query returns the email address' of customers who are able to upgrade their subscription plan. 
+-- The purpose of this query is to send a newsletter about the benefits of upgrading their subscription plan.
 USE video_streaming_service;
 SELECT 
 	c.customer_id AS 'Customer ID',
@@ -57,9 +64,3 @@ JOIN subscription_plans sp ON c.subscription_id = sp.subscription_id
 WHERE c.subscription_id != 3
 
 
--- Basic select statements to retrieve data from our database tables
-SELECT * FROM content
-SELECT * FROM customers
-SELECT * FROM distributors
-SELECT * FROM stream
-SELECT * FROM subscription_plans
