@@ -1,0 +1,11 @@
+content_id,title,episode,genre,running_time,release_year,distributor_id
+1,"The Shawshank Redemption",NULL,Drama,02:22:00,1994,1
+2,"The Godfather",NULL,Crime,02:55:00,1972,7
+3,"Avatar: The Last Airbender",S1.E2,Animation,00:25:00,2005,2
+4,"The Dark Knight",NULL,Action,02:32:00,2008,4
+5,"12 Angry Men",NULL,Crime,01:36:00,1957,5
+6,"Schindler's List",NULL,Biography,03:15:00,1993,6
+7,"Game of Thrones",S6.E9,Action,01:00:00,2016,8
+8,"Pulp Fiction",NULL,Crime,02:34:00,1994,9
+9,"The Good, the Bad and the Ugly",NULL,Western,02:58:00,1966,5
+10,"The Lord of the Rings: The Fellowship of the Ring",NULL,Action,02:58:00,2001,3

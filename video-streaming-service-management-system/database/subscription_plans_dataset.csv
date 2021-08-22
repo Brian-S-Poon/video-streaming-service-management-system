@@ -1,0 +1,4 @@
+subscription_id,subscription_name,subscription_price,number_of_devices
+1,Basic,9.99,1
+2,Standard,14.99,2
+3,Premium,19.99,4
