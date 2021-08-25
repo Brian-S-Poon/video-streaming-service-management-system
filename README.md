@@ -2,7 +2,7 @@
 A normalized relational database for a video streaming service provider.
 
 ## Inspiration
-This RDBMS (Relational Database Management System) was inspired by my desire to manage a customer database for Netflix.
+This RDBMS (Relational Database Management System) was inspired by an interest to build and manage a customer database for Netflix.
 
 ## How I designed it
 I designed and structured a Entity-relationship model using Lucidchart.
