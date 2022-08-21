@@ -20,3 +20,4 @@ I learned the basics of the programming language SQL and how to implement using 
 I also learned how to structure a relational database using database normalization to reduce data redundancy.
 In addition, I learned how to generate query reports with an abstract analysis.
 
+
